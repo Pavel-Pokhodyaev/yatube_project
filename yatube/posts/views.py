@@ -4,7 +4,13 @@ from django.http import HttpResponse
 
 # Главная страница
 def index(request):    
-    return HttpResponse('Главная страница Posts')
+    return HttpResponse(
+        'Ты <i>не можешь</i> получить правильные <b>ответы</b>,<br> '
+        '<a href="https://praktikum.yandex.ru/profile/backend-developer/">'
+        'Начать учиться</a><br>'
+        '<a href="http://127.0.0.1:8000/group/">'
+        'Страница group </a> '
+        )
 
 
 # Страница со списком мороженого
