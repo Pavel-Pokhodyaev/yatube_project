@@ -1,21 +1,25 @@
 # posts/views.py
 from django.http import HttpResponse
+from django.shortcuts import render
 
 
 # Главная страница
-def index(request):    
-    return HttpResponse(
-        'Ты <i>не можешь</i> получить правильные <b>ответы</b>,<br> '
-        '<a href="https://praktikum.yandex.ru/profile/backend-developer/">'
-        'Начать учиться</a><br>'
-        '<a href="http://127.0.0.1:8000/group/">'
-        'Страница group </a> '
-        )
-
+def index(request):
+    template = 'posts/index.html'
+    text = 'Это главная страница проекта Yatube'
+    context = {
+        'text': text,
+    }
+    return render(request, template, context) 
 
 # Страница со списком мороженого
 def group_posts(request):
-    return HttpResponse('Список постов')
+    template = 'posts/group_list.html'
+    text = 'Здесь будет информация о группах проекта Yatube'
+    context = {
+        'text': text,
+    }
+    return render(request, template, context) 
 
 
 # Страница с информацией об одном сорте мороженого;
