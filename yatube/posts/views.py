@@ -6,7 +6,8 @@ from django.shortcuts import render
 # Главная страница
 def index(request):
     template = 'posts/index.html'
-    text = 'Это главная страница проекта Yatube'
+    text = 'Вчера Крокодил<br>улыбнулся так злобно,<br>Что мне до сих ' \
+    'пор<br>за него неудобно.<br><i>Рената Муха</i>'
     context = {
         'text': text,
     }
