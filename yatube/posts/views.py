@@ -1,17 +1,16 @@
 # posts/views.py
 from django.http import HttpResponse
 from django.shortcuts import render
+from .models import Post
 
 
 # Главная страница
 def index(request):
-    template = 'posts/index.html'
-    text = 'Вчера Крокодил<br>улыбнулся так злобно,<br>Что мне до сих ' \
-    'пор<br>за него неудобно.<br><i>Рената Муха</i>'
+    posts = Post.objects.order_by('-pub_date')[:10]
     context = {
-        'text': text,
+        'posts': posts,
     }
-    return render(request, template, context) 
+    return render(request, 'posts/index.html', context) 
 
 # Страница со списком мороженого
 def group_posts(request):
