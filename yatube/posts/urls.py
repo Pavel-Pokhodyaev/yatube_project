@@ -2,18 +2,13 @@
 from django.urls import path
 from . import views
 
-
 app_name = 'posts'
+
 urlpatterns = [
     # Главная страница
-    path('', views.index),
+    path('', views.index, name ='index'),
     # Страница со списком постов
-    path('group_list.html', views.group_posts, name='group_posts'),
-    # Отдельная страница
-    path('group_list/any_slug',views.any_slug),
-    path(
-        'group_list/<int:pk>/',
-        views.posts_detail
-    ),
+    path('group/<slug:slug>/', views.group_posts, name='group_list'),
+    path('group_list/<slug:slug>', views.group_posts, name='group_list'),
     path('index.html', views.index),
 ] 

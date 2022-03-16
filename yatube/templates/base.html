@@ -2,15 +2,17 @@
 <html lang="ru">
   <head>
     {% load static %}
+    <meta charset="utf-8"> <!-- Кодировка сайта -->
+    <!-- Сайт готов работать с мобильными устройствами -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    {% block text %}{{ text|safe }}{% endblock %}
     <meta charset="utf-8"> <!-- Кодировка сайта -->
     <!-- Сайт готов работать с мобильными устройствами -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Подключен файл со стандартными стилями бустрап -->
     {% block title %}
-    <title>{{ title }}</title>
-    {% endblock %}
+      'пусто'
+    {% endblock title%}
   </head>
   <body>
     <header>
@@ -18,11 +20,11 @@
     </header>
     <main>
         {% block content %}
-        Контент не подвезли :(
+        Контент не подвезли :(((
       {% endblock %}
     </main>
-    <footer>
-        {% include 'includes/footer.html' %}
+    <footer class="border-top text-center py-3">
+      {% include 'includes/footer.html' %}
     </footer>
   </body>
-</html>
+  
